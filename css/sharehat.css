@@ -1,87 +1,78 @@
 @media (min-width:320px) {
   /* smartphones, iPhone, portrait 480x320 phones */
-  #sharing-link {
+  #link-box {
     display: inline-block;
-    height: 35px;
-    margin: 0 auto;
-    margin-bottom: 80px;
+    margin: 0 auto 80px auto;
     width: 80%;
     background: #5fcf80;
     border-radius: 8px;
     border: 2px solid white;
     display: table;
+    font-size: 13px;
   }
 
   #link-text {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    font-size: 14px;
     color: white;
-    padding-left: 30px;
-    vertical-align: middle;
     display: table-cell;
+    vertical-align: middle;
+    padding: 0.3em 0 0.3em 14px;
   }
 
   #copy-link {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    font-size: 14px;
     color: white;
-
-    padding-right: 30px;
-    vertical-align: middle;
+    padding: 0.3em 15px 0.3em 0;
     display: table-cell;
+    vertical-align: middle;
   }
 }
 
 @media (min-width:481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  #sharing-link {
+  #link-box {
     display: inline-block;
-    height: 45px;
-    margin: 0 auto;
-    margin-bottom: 80px;
-    width: 60%;
+    margin: 0 auto 80px auto;
+    width: 78%;
     background: #5fcf80;
     border-radius: 11px;
     border: 2px solid white;
     display: table;
+    font-size: 15px;
   }
 
   #link-text {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    font-size: 1.2em;
     color: white;
-    padding-left: 30px;
-    vertical-align: middle;
     display: table-cell;
+    vertical-align: middle;
+    padding: 0.3em 0 0.3em 20px;
   }
 
   #copy-link {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    font-size: 1.2em;
     color: white;
-
-    padding-right: 30px;
     vertical-align: middle;
     display: table-cell;
+    padding: 0.3em 20px 0.3em 0;
   }
 }
 
 @media (min-width:641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  #sharing-link {
+  #link-box {
     display: inline-block;
-    height: 45px;
-    margin: 0 auto;
-    margin-bottom: 80px;
-    width: 60%;
+    margin: 0 auto 80px auto;
+    width: 62%;
     background: #5fcf80;
     border-radius: 11px;
     border: 2px solid white;
     display: table;
+    font-size: 16px;
   }
 
   #link-text {
@@ -89,9 +80,9 @@
     font-weight: lighter;
     font-size: 1.2em;
     color: white;
-    padding-left: 30px;
-    vertical-align: middle;
     display: table-cell;
+    vertical-align: middle;
+    padding: 5px 0 5px 30px;
   }
 
   #copy-link {
@@ -99,10 +90,9 @@
     font-weight: lighter;
     font-size: 1.2em;
     color: white;
-
-    padding-right: 30px;
-    vertical-align: middle;
     display: table-cell;
+    vertical-align: middle;
+    padding: 5px 30px 5px 0;
   }
 }
 
