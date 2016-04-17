@@ -190,8 +190,6 @@ a:hover {
 }
 
 .btn-default {
-  margin-top: 30px;
-  margin-bottom: 95px;
   background-color: #5fcf80;
   z-index: 1;
   transition-property: background;
@@ -215,22 +213,34 @@ a:hover {
 
 }
 
+.upload-content {
+  margin-top: 60px;
+  background-color: white;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -31px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+	height: 31px; /* .push must be the same height as .footer */
+}
 
 .footer {
-
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  width: 100% !important;
-
-  background-color: blue;
+  background-color: white;
 
   font-family: 'Nunito', sans-serif;
   font-weight: 100;
   font-size: 1em;
   text-align: center !important;
   color: #aaa;
+}
+
+#footer-text {
+  padding-top: 5px;
 }
 
 .footer a {
