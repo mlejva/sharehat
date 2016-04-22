@@ -24,9 +24,21 @@
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
     color: white;
-    padding: 0.3em 15px 0.3em 0;
     display: table-cell;
     vertical-align: middle;
+    float: right;
+    padding: 2px 0px 0px 0;
+    border-bottom: 1px solid white;
+    margin-right: -80px;
+  }
+
+  #copy-link-underline {
+    display: table-cell;
+    width: 100px;
+  }
+
+  #copy-link:hover {
+    color: #aaa;
   }
 }
 
@@ -56,9 +68,21 @@
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
     color: white;
-    vertical-align: middle;
     display: table-cell;
-    padding: 0.3em 20px 0.3em 0;
+    vertical-align: middle;
+    float: right;
+    padding: 3px 0px 0px 0;
+    border-bottom: 1px solid white;
+    margin-right: -80px;
+  }
+
+  #copy-link-underline {
+    display: table-cell;
+    width: 100px;
+  }
+
+  #copy-link:hover {
+    color: #aaa;
   }
 }
 
@@ -92,7 +116,19 @@
     color: white;
     display: table-cell;
     vertical-align: middle;
-    padding: 5px 30px 5px 0;
+    float: right;
+    padding: 3px 0px 0px 0;
+    border-bottom: 1px solid white;
+    margin-right: -80px;
+  }
+
+  #copy-link-underline {
+    display: table-cell;
+    width: 100px;
+  }
+
+  #copy-link:hover {
+    color: #aaa;
   }
 }
 
@@ -140,6 +176,14 @@ a:hover {
   color: #38c262;
 }
 
+.navbar-header .navbar-brand:focus {
+  color: #38c262;
+}
+
+.navbar-header .navbar-brand:active {
+  color: #38c262;
+}
+
 .nav.navbar-nav.navbar-right li a {
   margin: 5px 0;
 
@@ -151,7 +195,6 @@ a:hover {
 .nav.navbar-nav.navbar-right li a:hover {
   color: #5fcf80;
 }
-
 
 .navbar-default .navbar-toggle {
   padding: 13px 0;
@@ -166,20 +209,16 @@ a:hover {
   background-color: transparent; /* Removes background color when tapped */
 }
 
-
-
 .navbar-default .navbar-toggle .icon-bar {
   height: 3px;
   width: 26px;
   background-color: #aaa; /* Changes regular toggle color */
 }
 
-
 .content {
   background-color: #5fcf80;
   height: auto;
 }
-
 
 .btn {
   font-weight: lighter;
