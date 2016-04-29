@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div id="dropzone">
-              <form class="dropzone needsclick" id="upload-form" action="upload.php" method="post" enctype="multipart/form-data">
+              <form id="upload-form" class="dropzone needsclick" action="upload.php" method="post" enctype="multipart/form-data">
                 <div class="dz-message needsclick">Drop files here or click to upload.</div>
               </form>
             </div>
@@ -109,10 +109,10 @@
 
   <script type="text/javascript">
 
-    
 
-    /*
-    Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
+
+
+    Dropzone.options.uploadForm = { // The camelized version of the ID of the form element
       autoProcessQueue: false,
       uploadMultiple: true,
       addRemoveLinks: true,
@@ -163,7 +163,7 @@
         });
       }
     }
-    */
+    
   </script>
 </body>
 
