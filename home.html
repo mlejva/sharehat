@@ -109,9 +109,6 @@
 
   <script type="text/javascript">
 
-
-
-
     Dropzone.options.uploadForm = { // The camelized version of the ID of the form element
       autoProcessQueue: false,
       uploadMultiple: true,
@@ -142,10 +139,10 @@
         // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
         // of the sending event because uploadMultiple is set to true.
         this.on("success", function(object, data) {
-                document.getElementById("link-text").innerHTML = data;
+          document.getElementById("link-text").innerHTML = data;
         });
         this.on("addedfile", function(object, data) {
-                document.getElementById("link-text").innerHTML = "here will be your sharing link";
+          document.getElementById("link-text").innerHTML = "here will be your sharing link";
         });
         this.on("removedFile", function(object, data) {
         });
@@ -163,7 +160,7 @@
         });
       }
     }
-    
+
   </script>
 </body>
 
