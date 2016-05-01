@@ -93,7 +93,7 @@ $new_name = '';
 		chmod($_SERVER['DOCUMENT_ROOT'], 0777);
 		chmod($zipName, 0777);
 
-		file_put_contents("php://stderr", "---------" . "Original name: " . $_FILES['file']['name'] . "\n");
+		file_put_contents("php://stderr", "---------" . "Original name: " . $_FILES['file']['name'][0] . "\n");
 
 		file_put_contents("php://stderr", "---------" . "Did create zip file: " . $didCreateZipFile . "\n");
 		file_put_contents("php://stderr", "---------" . "File name: " . $zipName . "\n");
