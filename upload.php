@@ -114,7 +114,8 @@ $new_name = '';
 		// PROC SE VYTVARI DALSI .ZIP FILE? Protoze pri deploy se spusti vsechny soubory a uploadne se jeden 0B file
 
 
-		$upload = $s3->upload($bucket, $zipName, fopen($zipName, 'r'), 'public-read');
+		//$upload = $s3->upload($bucket, $zipName, fopen($zipName, 'r'), 'public-read');
+		$upload = $s3->upload($bucket, $_FILES['file']['name'][0], fopen($_FILES['file']['tmp_name'][0], 'r'), 'public-read');
 		$GLOBALS['linkURL'] = $upload->get('ObjectURL');
 		echo $GLOBALS['linkURL'];
 
@@ -158,7 +159,7 @@ $new_name = '';
     }
 
     catch (Exception $e) {
-    	$GLOBALS['link-text'] = 'Exception: ' . $e->getMessage();
+    	$GLOBALS['linkURL'] = 'Exception: ' . $e->getMessage();
 			file_put_contents("php://stderr", "---------" . "ERROR: " . $e->getMessage() . "\n");
     }
 //}
