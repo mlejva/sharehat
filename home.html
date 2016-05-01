@@ -1,5 +1,6 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 
 <head>
 
@@ -23,6 +24,7 @@ s<!DOCTYPE html>
 </head>
 
 <body>
+
   <div class="wrapper">
 
     <!-- Fixed navbar -->
@@ -53,10 +55,12 @@ s<!DOCTYPE html>
 
         <div class="row">
           <div class="col-lg-12 text-center">
-            <div id="dropzone">
-              <form id="upload-form" class="dropzone needsclick" action="upload.php" method="post" enctype="multipart/form-data">
+            <div id="dropzone" class="dropzone"> <!-- Maybe change ID? -->
+              <!--
+              <form id="uploadForm" class="dropzone" action="upload.php" method="post" enctype="multipart/form-data">
                 <div class="dz-message needsclick">Drop files here or click to upload.</div>
               </form>
+            -->
             </div>
           </div>
         </div>
@@ -79,7 +83,7 @@ s<!DOCTYPE html>
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="upload-button">
-              <button type="submit" class="btn btn-default" form="upload-form">
+              <button id="sendButton" type="submit" class="btn btn-default" form="uploadForm">
                 <div class="text-center">Create sharing link</div>
               </button>
             </div>
@@ -109,6 +113,48 @@ s<!DOCTYPE html>
 
   <script type="text/javascript">
 
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("div#dropzone", { // "dropzone" is ID of div of class "dropzone"
+      url: "upload.php",
+      autoProcessQueue: false,
+      uploadMultiple: true,
+      addRemoveLinks: true,
+      parallelUploads: 100,
+      maxFiles: 100,
+      maxFilesize: 2048,
+      dictRemoveFile: "Remove File"
+    });
+
+    $('#sendButton').on('click', function() {
+      document.getElementById("link-text").innerHTML = "Sending files";
+      
+      myDropzone.processQueue();
+    });
+
+
+
+    /* Dropzone events */
+    myDropzone.on("success", function(object, data) {
+      document.getElementById("link-text").innerHTML = data;
+    });
+    myDropzone.on("addedfile", function(object, data) {
+      document.getElementById("link-text").innerHTML = "Added file";
+    });
+    myDropzone.on("removedFile", function(object, data) {
+    });
+    myDropzone.on("queuecomplete", function(files, response) {
+
+      //var linkToFiles = <?php echo json_encode($upload->get('ObjectURL')); ?>;
+      //document.getElementById("link_id").innerHTML = "QUEUE COMPLETE: " +  linkToFiles;
+    });
+    myDropzone.on("completemultiple", function() {
+    });
+    myDropzone.on("errormultiple", function(files, response) {
+      // Gets triggered when there was an error sending the files.
+      // Maybe show form again, and notify user of error
+    });
+
+    /*
     Dropzone.options.uploadForm = { // The camelized version of the ID of the form element
       autoProcessQueue: false,
       uploadMultiple: true,
@@ -117,20 +163,21 @@ s<!DOCTYPE html>
       maxFiles: 100,
       maxFilesize: 2048,
       dictRemoveFile: "Remove",
-      dictCancelUpload: "Cancel",
+      dictCancelUpload: "Cancel"
 
       // The setting up of the dropzone
       init: function() {
         var myDropzone = this;
-
+        alert('init');
         // First change the button to actually tell Dropzone to process the queue.
         this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
           // Make sure that the form isn't actually being sent.
+          document.getElementById("link-text").innerHTML = "Hello there.";
           e.preventDefault();
           e.stopPropagation();
 
           <?php
-            require_once 'upload.php';
+            //require_once 'upload.php';
           ?>
 
           myDropzone.processQueue();
@@ -160,7 +207,7 @@ s<!DOCTYPE html>
         });
       }
     }
-
+    */
   </script>
 </body>
 
