@@ -1,7 +1,7 @@
 <?php
 /* creates a compressed zip file */
 if (!function_exists('parseDate')) {
-	    function create_zip($files = array(), $file_names = array(), $destination = '', $overwrite = false) {
+	  function create_zip($files = array(), $file_names = array(), $destination = '', $overwrite = false) {
 		// if the zip file already exists and overwrite is false, return false
 		if (file_exists($destination) && !$overwrite)
 			return false;
@@ -18,10 +18,10 @@ if (!function_exists('parseDate')) {
 			}
 		}
 		// if we have good files...
-		if(count($valid_files)) {
+		if (count($valid_files)) {
 			// create the archive
 			$zip = new ZipArchive();
-			if ($zip->open($destination,$overwrite ? ZIPARCHIVE::OVERWRITE : ZIPARCHIVE::CREATE) !== true) {
+			if ($zip->open($destination, $overwrite ? ZIPARCHIVE::OVERWRITE : ZIPARCHIVE::CREATE) !== true) {
 				return false;
 			}
 			// add the files
@@ -92,6 +92,8 @@ $new_name = '';
 
 		chmod($_SERVER['DOCUMENT_ROOT'], 0777);
 		chmod($zipName, 0777);
+
+		file_put_contents("php://stderr", "---------" . "Original name: " . $_FILES['file']['name'] . "\n");
 
 		file_put_contents("php://stderr", "---------" . "Did create zip file: " . $didCreateZipFile . "\n");
 		file_put_contents("php://stderr", "---------" . "File name: " . $zipName . "\n");

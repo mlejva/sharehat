@@ -122,8 +122,10 @@
       parallelUploads: 100,
       maxFiles: 100,
       maxFilesize: 2048,
-      dictRemoveFile: "Remove File"
+      dictRemoveFile: "Remove File",
+      dictCancelUpload: "Cancel Upload" // shows when file is uploading and user wants to cancel that upload
     });
+
 
 
     $('#sendButton').on('click', function() {
@@ -131,7 +133,6 @@
 
       myDropzone.processQueue();
     });
-
 
 
     /* Dropzone events */
@@ -150,7 +151,7 @@
     myDropzone.on("completemultiple", function() {
     });
     myDropzone.on("errormultiple", function(files, response) {
-      
+
     });
   </script>
 </body>
