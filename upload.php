@@ -88,6 +88,7 @@ $new_name = '';
     	$randomFoldername = explode(".", uniqid(rand(), true), 2)[0];
     	$zipName = $randomFoldername . ".zip";
     	$zipPath = $_SERVER['DOCUMENT_ROOT'] . '/' . $zipName;
+			file_put_contents("php://stderr", "---------" . "Zip path: " . $zipPath . "\n");
 		create_zip($_FILES['file']['tmp_name'], $_FILES['file']['name'], $zipPath);
 
 		chmod($_SERVER['DOCUMENT_ROOT'], 0777);
