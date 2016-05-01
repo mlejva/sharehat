@@ -157,7 +157,8 @@ $new_name = '';
     }
 
     catch (Exception $e) {
-    	$GLOBALS['linkURL'] = 'Exception: ' . $e->getMessage();
+    	$GLOBALS['link-text'] = 'Exception: ' . $e->getMessage();
+			file_put_contents("php://stderr", "---------" . "ERROR: " . $e->getMessage() . "\n");
     }
 //}
 
