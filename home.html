@@ -125,9 +125,10 @@
       dictRemoveFile: "Remove File"
     });
 
+
     $('#sendButton').on('click', function() {
       document.getElementById("link-text").innerHTML = "Sending files";
-      
+
       myDropzone.processQueue();
     });
 
@@ -144,70 +145,13 @@
     });
     myDropzone.on("queuecomplete", function(files, response) {
 
-      //var linkToFiles = <?php echo json_encode($upload->get('ObjectURL')); ?>;
-      //document.getElementById("link_id").innerHTML = "QUEUE COMPLETE: " +  linkToFiles;
+
     });
     myDropzone.on("completemultiple", function() {
     });
     myDropzone.on("errormultiple", function(files, response) {
-      // Gets triggered when there was an error sending the files.
-      // Maybe show form again, and notify user of error
+      
     });
-
-    /*
-    Dropzone.options.uploadForm = { // The camelized version of the ID of the form element
-      autoProcessQueue: false,
-      uploadMultiple: true,
-      addRemoveLinks: true,
-      parallelUploads: 100,
-      maxFiles: 100,
-      maxFilesize: 2048,
-      dictRemoveFile: "Remove",
-      dictCancelUpload: "Cancel"
-
-      // The setting up of the dropzone
-      init: function() {
-        var myDropzone = this;
-        alert('init');
-        // First change the button to actually tell Dropzone to process the queue.
-        this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-          // Make sure that the form isn't actually being sent.
-          document.getElementById("link-text").innerHTML = "Hello there.";
-          e.preventDefault();
-          e.stopPropagation();
-
-          <?php
-            //require_once 'upload.php';
-          ?>
-
-          myDropzone.processQueue();
-        });
-
-        // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
-        // of the sending event because uploadMultiple is set to true.
-        this.on("success", function(object, data) {
-          document.getElementById("link-text").innerHTML = data;
-        });
-        this.on("addedfile", function(object, data) {
-          document.getElementById("link-text").innerHTML = "here will be your sharing link";
-        });
-        this.on("removedFile", function(object, data) {
-        });
-        this.on("queuecomplete", function(files, response) {
-
-          //var linkToFiles = <?php echo json_encode($upload->get('ObjectURL')); ?>;
-          //document.getElementById("link_id").innerHTML = "QUEUE COMPLETE: " +  linkToFiles;
-        });
-        this.on("completemultiple", function() {
-        });
-        this.on("errormultiple", function(files, response) {
-
-          // Gets triggered when there was an error sending the files.
-          // Maybe show form again, and notify user of error
-        });
-      }
-    }
-    */
   </script>
 </body>
 
