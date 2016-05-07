@@ -137,7 +137,9 @@
     });
 
     $('#sendButton').on('click', function() {
-      document.getElementById("link-text").value = "Sending files";
+      if (myDropzone.getQueuedFiles().length > 0)
+        document.getElementById("link-text").value = "Sending files...";
+
       myDropzone.processQueue();
     });
 
@@ -150,24 +152,28 @@
       document.getElementById("link-text").value = data;
     });
     myDropzone.on("addedfile", function(object, data) {
-      document.getElementById("link-text").value = "Added file";
+
     });
     myDropzone.on("removedFile", function(object, data) {
+
     });
     myDropzone.on("queuecomplete", function(files, response) {
+
     });
     myDropzone.on("completemultiple", function() {
+
     });
     myDropzone.on("errormultiple", function(files, response) {
+      document.getElementById("link-text").value = response;
     });
 
     /* ClipboardJS */
     var clipboard = new Clipboard('.text-right');
     clipboard.on('success', function(e) {
-        console.log(e);
+        //console.log(e);
     });
     clipboard.on('error', function(e) {
-        console.log(e);
+        //console.log(e);
     });
   </script>
 </body>

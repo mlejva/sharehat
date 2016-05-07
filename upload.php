@@ -59,9 +59,7 @@ $new_name = '';
 
 
 if (!empty($_FILES)) {
-
 		try {
-
     	// initialization of '$name_array'
     	foreach ($_FILES['file']['tmp_name'] as $index => $tmpName) {
     		$name = $_FILES['file']['name'][$index];
