@@ -14,16 +14,21 @@
   #link-text {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    color: white;
+    background: transparent;
+    width: 100%;
     display: table-cell;
     vertical-align: middle;
     padding: 0.3em 0 0.3em 14px;
+    border-radius:10px;
+    border: none;
   }
 
   #copy-link {
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
     color: white;
+    background: transparent;
+    border: none;
     display: table-cell;
     vertical-align: middle;
     float: right;
@@ -62,6 +67,7 @@
     display: table-cell;
     vertical-align: middle;
     padding: 0.3em 0 0.3em 20px;
+    border: none;
   }
 
   #copy-link {
@@ -107,6 +113,7 @@
     display: table-cell;
     vertical-align: middle;
     padding: 5px 0 5px 30px;
+    border: none;
   }
 
   #copy-link {

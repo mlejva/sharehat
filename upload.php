@@ -29,8 +29,6 @@ if (!function_exists('parseDate')) {
 				$zip->addFile($valid_files[$i], $file_names[$i]);
 			}
 
-			// debug
-			//echo 'The zip archive contains ',$zip->numFiles,' files with a status of ',$zip->status;
 
 			// close the zip -- done!
 			$zip->close();
@@ -60,9 +58,9 @@ $name_array = array(); // help array for renaming files with same name
 $new_name = '';
 
 
-//if (!empty($_FILES)) {
+if (!empty($_FILES)) {
 
-    try {
+		try {
 
     	// initialization of '$name_array'
     	foreach ($_FILES['file']['tmp_name'] as $index => $tmpName) {
@@ -103,18 +101,16 @@ $new_name = '';
 		file_put_contents("php://stderr", "---------" . "File readable: " . is_readable($zipName) . "\n");
 		file_put_contents("php://stderr", "---------" . "File writable: " . is_writable($zipName) . "\n");
 		$fp = fopen($zipName, 'a+');
-		if (!$fp) {
+		if (!$fp)
 			file_put_contents("php://stderr", "---------" . "Cannot open file.\n");
-		}
-		else {
+		else
 		  file_put_contents("php://stderr", "---------" . "Can open file.\n");
-		}
 
 
 		// PROC SE VYTVARI DALSI .ZIP FILE? Protoze pri deploy se spusti vsechny soubory a uploadne se jeden 0B file
 
 
-		$upload = $s3->upload($bucket, $zipName, fopen($zipName, 'r'), 'public-read');		
+		$upload = $s3->upload($bucket, $zipName, fopen($zipName, 'r'), 'public-read');
 		$GLOBALS['linkURL'] = $upload->get('ObjectURL');
 		echo $GLOBALS['linkURL'];
 
@@ -161,7 +157,7 @@ $new_name = '';
     	$GLOBALS['linkURL'] = 'Exception: ' . $e->getMessage();
 			file_put_contents("php://stderr", "---------" . "ERROR: " . $e->getMessage() . "\n");
     }
-//}
+}
 
 //}
 ?>
