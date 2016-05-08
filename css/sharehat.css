@@ -247,17 +247,11 @@ a:hover {
   background-color: #38c262;
 }
 
-.btn:hover {
+.btn:hover { }
 
-}
+.btn:focus { }
 
-.btn:focus {
-
-}
-
-.btn:focus:hover {
-
-}
+.btn:focus:hover { }
 
 .upload-content {
   margin-top: 60px;
