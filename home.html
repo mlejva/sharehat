@@ -171,9 +171,13 @@
     });
 
     myDropzone.on("queuecomplete", function(progress) {
+      // Reset progress color bar
       document.getElementById("progress-color").style.width = 0 + "%";
       document.getElementById("progress-color").style.borderTopRightRadius = "0px";
       document.getElementById("progress-color").style.borderBottomRightRadius = "0px";
+
+      // Enable upload button
+      document.getElementById("sendButton").disabled = false;
     });
 
     myDropzone.on("success", function(object, data) {
