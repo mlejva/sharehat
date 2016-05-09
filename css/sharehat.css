@@ -137,6 +137,14 @@
   #copy-link:hover {
     color: #aaa;
   }
+
+  #progress-color {
+    display: inline-block;
+    width: 50%;
+    background: #38c262;
+    border-radius: 11px;
+    display: table;
+  }
 }
 
 html, body {
