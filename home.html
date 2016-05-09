@@ -148,7 +148,7 @@
 
     /* Dropzone events */
     myDropzone.on("totaluploadprogress", function(progress) {
-      document.getElementById("link-text").value = "Uploading... " + Math.round(progress) + "%";
+      document.getElementById("link-text").value = "Uploading... " + Math.ceil(progress) + "%";
     });
     myDropzone.on("success", function(object, data) {
       document.getElementById("link-text").value = data;
