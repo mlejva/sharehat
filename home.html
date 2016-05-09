@@ -69,15 +69,13 @@
           <div class="col-lg-12">
             <div id="link-box">
               <div id="progress-color">
-                  <input class="text-left" id="link-text" readonly="readonly" value="Your link will be here">
-                  <button href="" class="text-right" id="copy-link" data-clipboard-action="copy" data-clipboard-target="#link-text">copy link</button>
-                  <div id="copy-link-underline"></div>
+                <input class="text-left" id="link-text" readonly="readonly" value="Your link will be here">
+                <button href="" class="text-right" id="copy-link" data-clipboard-action="copy" data-clipboard-target="#link-text">copy link</button>
+                <div id="copy-link-underline"></div>
               </div>
               <!--<p class="text-left" id="link-text">Your link will be here</p>-->
 
               <!--<a href="" class="text-right" id="copy-link" data-clipboard-target="#link-text">copy link</a>-->
-
-
             </div>
           </div>
         </div>
@@ -152,9 +150,24 @@
     });
 
     /* Dropzone events */
+
+    // Update progress while uploading
     myDropzone.on("totaluploadprogress", function(progress) {
       document.getElementById("link-text").value = "Uploading... " + Math.ceil(progress) + "%";
+      document.getElementById("progress-color").style.width = progress + "%";
     });
+
+    myDropzone.on("sending", function(file) {
+      // TODO: Remove button should be "changed" to "Cancel upload" button
+
+      // Disable upload button
+      document.getElementById("sendButton").disabled = true;
+    });
+
+    myDropzone.on("queuecomplete", function(progress) {
+      document.getElementById("progress-color").style.width = 0 + "%";
+    });
+
     myDropzone.on("success", function(object, data) {
       document.getElementById("link-text").value = data;
     });

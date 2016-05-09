@@ -95,7 +95,7 @@
 @media (min-width:641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
   #link-box {
-    display: inline-block;
+    /*display: inline-block;*/
     margin: 0 auto 80px auto;
     width: 62%;
     background: #5fcf80;
@@ -103,6 +103,13 @@
     border: 2px solid white;
     display: table;
     font-size: 16px;
+  }
+
+  #progress-color {
+    width: 0%;
+    background: #38c262;
+    border-radius: 11px 0 0 11px;
+    display: table;
   }
 
   #link-text {
@@ -136,14 +143,6 @@
 
   #copy-link:hover {
     color: #aaa;
-  }
-
-  #progress-color {
-    display: inline-block;
-    width: 50%;
-    background: #38c262;
-    border-radius: 11px;
-    display: table;
   }
 }
 
