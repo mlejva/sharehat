@@ -155,6 +155,12 @@
     myDropzone.on("totaluploadprogress", function(progress) {
       document.getElementById("link-text").value = "Uploading... " + Math.ceil(progress) + "%";
       document.getElementById("progress-color").style.width = progress + "%";
+      if (Math.ceil(progress) > 99) {
+        document.getElementById("progress-color").style.borderBottomLeftRadius = "11px";
+        document.getElementById("progress-color").style.borderBottomRightRadius = "11px";
+        document.getElementById("progress-color").style.borderTopLeftRadius = "11px";
+        document.getElementById("progress-color").style.borderTopRightRadius = "11px";
+      }
     });
 
     myDropzone.on("sending", function(file) {
@@ -166,10 +172,8 @@
 
     myDropzone.on("queuecomplete", function(progress) {
       document.getElementById("progress-color").style.width = 0 + "%";
-      document.getElementById("progress-color").style.borderBottomLeftRadius = "11px";
-      document.getElementById("progress-color").style.borderBottomRightRadius = "11px";
-      document.getElementById("progress-color").style.borderTopLeftRadius = "11px";
-      document.getElementById("progress-color").style.borderTopRightRadius = "11px";
+      document.getElementById("progress-color").style.borderTopRightRadius = "0px";
+      document.getElementById("progress-color").style.borderBottomRightRadius = "0px";
     });
 
     myDropzone.on("success", function(object, data) {
